@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="BioScore.Api/BioScore.Api.csproj" />
+  <Project Path="BioScore.Core/BioScore.Core.csproj" />
+  <Project Path="BioScore.Infrastructure/BioScore.Infrastructure.csproj" />
+</Solution>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net9.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\BioScore.Core\BioScore.Core.csproj" />
+		<ProjectReference Include="..\BioScore.Infrastructure\BioScore.Infrastructure.csproj" />
+	</ItemGroup>
+
+</Project>
