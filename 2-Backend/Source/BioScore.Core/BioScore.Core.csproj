@@ -8,7 +8,6 @@
 
 	<ItemGroup>
 		<Folder Include="Modules\Identity\" />
-		<Folder Include="Modules\Exams\" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,5 +1,6 @@
 ﻿using BioScore.Core.Common.Interfaces;
 using BioScore.Core.Modules.DietTracker.Entities;
+using BioScore.Core.Modules.Exams.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BioScore.Infrastructure.Persistence
@@ -7,28 +8,21 @@ namespace BioScore.Infrastructure.Persistence
     public class AppDbContext : DbContext, IAppDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-
-        public DbSet<DailyLog> DailyLogs { get; set; }
-        public DbSet<DailyLogItem> DailyLogItems { get; set; }
-
+        public DbSet<DailyLog> DailyLogs => Set<DailyLog>();
+        public DbSet<DailyLogItem> DailyLogItems => Set<DailyLogItem>();
+        public DbSet<ExamCategory> ExamCategories => Set<ExamCategory>();
+        public DbSet<Exam> Exams => Set<Exam>();
+        public DbSet<ExamRequest> ExamRequests => Set<ExamRequest>();
+        public DbSet<ExamRequestItem> ExamRequestItems => Set<ExamRequestItem>();
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            // Mapeamento DailyLog
-            modelBuilder.Entity<DailyLog>(entity =>
-            {
-                entity.ToTable("DailyLog"); // O nome exato da sua tabela no SQL
-                entity.HasKey(e => e.Id);
-                entity.HasMany(e => e.Items).WithOne().HasForeignKey(i => i.DailyLogId);
-            });
-
-            // Mapeamento DailyLogItem
-            modelBuilder.Entity<DailyLogItem>(entity =>
-            {
-                entity.ToTable("DailyLogItem");
-                entity.HasKey(e => e.Id);
-            });
+            modelBuilder.Entity<ExamRequestItem>()
+                .HasOne<Exam>()
+                .WithMany()
+                .HasForeignKey(e => e.ExamId);
+            modelBuilder.Entity<ExamRequestItem>()
+                .HasIndex(e => new { e.ExamRequestId, e.ExamId }).IsUnique();
         }
     }
 }
