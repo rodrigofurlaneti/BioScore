@@ -17,7 +17,7 @@ namespace BioScore.Infrastructure
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
             services.AddScoped<DietQueries>();
-            services.AddScoped<IFoodRecognitionService, GoogleVisionFoodAdapter>();
+            services.AddScoped<IFoodRecognitionService, OpenAIVisionFoodAdapter>();
             return services;
         }
     }

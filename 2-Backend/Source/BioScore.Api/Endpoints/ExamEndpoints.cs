@@ -1,7 +1,9 @@
-﻿using BioScore.Core.Modules.Exams.Entities;
+﻿using BioScore.Core.Common.Interfaces;
+using BioScore.Core.Modules.Exams.Entities;
 using BioScore.Infrastructure.Persistence.Queries;
-using IAppDbContext = BioScore.Core.Common.Interfaces.IAppDbContext;
-using Microsoft.AspNetCore.Mvc; 
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BioScore.Api.Endpoints
 {
@@ -12,14 +14,16 @@ namespace BioScore.Api.Endpoints
             var group = app.MapGroup("/api/exams").WithTags("Exams");
 
             // 1. LEITURA RÁPIDA (Usando Dapper)
-            group.MapGet("/user/{userId:guid}/pending", async (Guid userId, ExamQueries queries) =>
+            // AVISO DO ARQUITETO: [FromServices] adicionado aqui para o .NET não achar que 'queries' vem do JSON!
+            group.MapGet("/user/{userId:guid}/pending", async (Guid userId, [FromServices] ExamQueries queries) =>
             {
                 var exams = await queries.GetPendingExamsByUserAsync(userId);
                 return Results.Ok(exams);
             });
 
             // 2. ESCRITA SEGURA (Usando EF Core)
-            group.MapPost("/request", async ([FromBody] ExamRequest request, IAppDbContext db) =>
+            // AVISO DO ARQUITETO: [FromBody] removido! O .NET 9 já sabe que 'ExamRequest' vem do corpo (JSON).
+            group.MapPost("/request", async (ExamRequest request, [FromServices] IAppDbContext db) =>
             {
                 request.CreatedAt = DateTime.UtcNow;
                 db.ExamRequests.Add(request);
@@ -29,7 +33,7 @@ namespace BioScore.Api.Endpoints
             });
 
             // 3. ATUALIZAÇÃO SEGURA (Usando EF Core)
-            group.MapPut("/request-item/{itemId:guid}/complete", async (Guid itemId, IAppDbContext db) =>
+            group.MapPut("/request-item/{itemId:guid}/complete", async (Guid itemId, [FromServices] IAppDbContext db) =>
             {
                 var item = await db.ExamRequestItems.FindAsync(itemId);
                 if (item == null) return Results.NotFound();

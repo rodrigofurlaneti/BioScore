@@ -1,7 +1,9 @@
-﻿namespace BioScore.Core.Modules.DietTracker.Interfaces
+﻿using BioScore.Core.Modules.DietTracker.DTOs;
+
+namespace BioScore.Core.Modules.DietTracker.Interfaces
 {
     public interface IFoodRecognitionService
     {
-        Task<List<string>> AnalyzeFoodPhotoAsync(string imageUrl);
+        Task<List<FoodAnalysisItem>> AnalyzeFoodPhotoAsync(string imageBase64OrUrl);
     }
 }
