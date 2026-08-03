@@ -1,0 +1,52 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxs);
+}
+
+.label {
+  font-size: var(--text-caption-strong);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.224px;
+}
+
+.field {
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  color: var(--color-ink);
+  background: var(--color-canvas);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  padding: 12px 20px;
+  height: 44px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  letter-spacing: -0.374px;
+}
+
+.field::placeholder {
+  color: var(--color-ink-muted-48);
+}
+
+.field:focus {
+  border-color: var(--color-primary-focus);
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
+}
+
+.field.error {
+  border-color: #d70015;
+  box-shadow: 0 0 0 3px rgba(215, 0, 21, 0.15);
+}
+
+.errorMsg {
+  font-size: var(--text-caption);
+  color: #d70015;
+  letter-spacing: -0.224px;
+}
+
+/* Rect variant (non-pill) */
+.rect .field {
+  border-radius: var(--radius-sm);
+}

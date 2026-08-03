@@ -1,0 +1,111 @@
+/* ── Button base ─────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  white-space: nowrap;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+/* ── Primary pill (Action Blue) ──────────────────────────── */
+.primary {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.374px;
+  border-radius: var(--radius-pill);
+  padding: 11px 22px;
+  border: none;
+  min-height: 44px;
+}
+
+.primary:hover {
+  background: #0077ed;
+}
+
+/* ── Secondary ghost pill ────────────────────────────────── */
+.secondary {
+  background: transparent;
+  color: var(--color-primary);
+  font-size: var(--text-body);
+  font-weight: 400;
+  letter-spacing: -0.374px;
+  border-radius: var(--radius-pill);
+  padding: 10px 22px;
+  border: 1px solid var(--color-primary);
+  min-height: 44px;
+}
+
+.secondary:hover {
+  background: rgba(0, 102, 204, 0.06);
+}
+
+/* ── Dark utility (nav) ──────────────────────────────────── */
+.dark {
+  background: var(--color-ink);
+  color: #ffffff;
+  font-size: var(--text-button-utility);
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  border-radius: var(--radius-sm);
+  padding: 8px 15px;
+  border: none;
+  min-height: 36px;
+}
+
+/* ── Store hero (large, weight 300) ──────────────────────── */
+.hero {
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--text-button-large);
+  font-weight: 300;
+  letter-spacing: 0;
+  border-radius: var(--radius-pill);
+  padding: 14px 28px;
+  border: none;
+  min-height: 52px;
+}
+
+/* ── Pearl capsule ───────────────────────────────────────── */
+.pearl {
+  background: var(--color-surface-pearl);
+  color: var(--color-ink-muted-80);
+  font-size: var(--text-caption);
+  font-weight: 400;
+  letter-spacing: -0.224px;
+  border-radius: var(--radius-md);
+  padding: 8px 14px;
+  border: 3px solid var(--color-divider-soft);
+  min-height: 36px;
+}
+
+/* ── Icon circular ───────────────────────────────────────── */
+.icon {
+  background: var(--color-surface-chip);
+  color: var(--color-ink);
+  border-radius: var(--radius-full);
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Disabled state ──────────────────────────────────────── */
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}

@@ -1,0 +1,131 @@
+.page { background: var(--color-canvas-parchment); }
+
+/* ── Hero tile ───────────────────────────────────────────── */
+.hero {
+  background: var(--color-surface-tile-1);
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-section) var(--space-lg);
+}
+
+.heroInner { max-width: 692px; }
+
+.greeting {
+  font-family: var(--font-body);
+  font-size: var(--text-tagline);
+  font-weight: 600;
+  color: var(--color-body-muted);
+  letter-spacing: 0.231px;
+  margin-bottom: var(--space-sm);
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 600;
+  color: var(--color-body-on-dark);
+  line-height: 1.10;
+  margin-bottom: var(--space-md);
+}
+
+.heroSub {
+  font-size: var(--text-lead);
+  font-weight: 400;
+  color: var(--color-body-muted);
+  line-height: 1.14;
+}
+
+/* ── Stats grid ──────────────────────────────────────────── */
+.statsSection {
+  padding: var(--space-section) var(--space-lg);
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+}
+
+.statCard {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+}
+
+.statLabel {
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted-48);
+  letter-spacing: -0.224px;
+  margin-bottom: var(--space-xxs);
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.374px;
+  line-height: 1;
+}
+
+.statUnit {
+  font-size: var(--text-body);
+  color: var(--color-ink-muted-48);
+  margin-left: var(--space-xxs);
+}
+
+/* ── Progress bar ────────────────────────────────────────── */
+.progressBar {
+  width: 100%;
+  height: 4px;
+  background: var(--color-hairline);
+  border-radius: var(--radius-pill);
+  margin-top: var(--space-sm);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--color-primary);
+  border-radius: var(--radius-pill);
+  transition: width 0.4s ease;
+}
+
+/* ── Quick actions ───────────────────────────────────────── */
+.actionsSection {
+  background: var(--color-canvas-parchment);
+  padding: var(--space-section) var(--space-lg);
+}
+
+.actionsInner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.374px;
+  margin-bottom: var(--space-xxl);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-lg);
+  text-align: left;
+}
+
+@media (max-width: 640px) {
+  .statsGrid, .cardsGrid { grid-template-columns: 1fr; }
+  .heroTitle { font-size: var(--text-display-md); }
+}

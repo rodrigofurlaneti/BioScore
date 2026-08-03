@@ -1,0 +1,105 @@
+.page { background: var(--color-canvas-parchment); min-height: 100vh; }
+
+.hero {
+  background: var(--color-surface-tile-2);
+  padding: var(--space-xxl) var(--space-lg) var(--space-xl);
+  text-align: center;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 600;
+  color: var(--color-body-on-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.subtitle {
+  font-size: var(--text-lead);
+  color: var(--color-body-muted);
+}
+
+.body {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: var(--text-display-md);
+  font-weight: 600;
+  color: var(--color-ink);
+  letter-spacing: -0.374px;
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Request card ────────────────────────────────────────── */
+.requestCard {
+  background: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.requestHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-hairline);
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.requestMeta {
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted-48);
+  letter-spacing: -0.224px;
+}
+
+.requestDoctor {
+  font-size: var(--text-body-strong);
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.examRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-hairline);
+  gap: var(--space-md);
+}
+
+.examRow:last-child { border-bottom: none; }
+
+.examName {
+  font-size: var(--text-body);
+  color: var(--color-ink);
+  flex: 1;
+}
+
+.examCategory {
+  font-size: var(--text-caption);
+  color: var(--color-ink-muted-48);
+  letter-spacing: -0.224px;
+}
+
+.badge {
+  font-size: var(--text-caption);
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.badge.pending  { background: #fff3e0; color: #e65100; }
+.badge.done     { background: #e8f5e9; color: #1b5e20; }
+
+@media (max-width: 640px) {
+  .title { font-size: var(--text-display-md); }
+}

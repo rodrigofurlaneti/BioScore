@@ -1,0 +1,14 @@
+.wrap { display: flex; align-items: center; justify-content: center; padding: var(--space-xl); }
+.fullPage { min-height: 60vh; }
+
+.ring {
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-hairline);
+  border-top-color: var(--color-primary);
+  animation: spin 0.7s linear infinite;
+}
+.sm { width: 20px; height: 20px; }
+.md { width: 32px; height: 32px; }
+.lg { width: 48px; height: 48px; }
+
+@keyframes spin { to { transform: rotate(360deg); } }

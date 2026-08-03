@@ -1,0 +1,84 @@
+/* ============================================================
+   DESIGN TOKENS — Apple-style system
+   All values sourced from the design spec.
+   ============================================================ */
+
+:root {
+  /* ── Brand & Accent ─────────────────────────────────────── */
+  --color-primary:           #0066cc;   /* Action Blue — every interactive element */
+  --color-primary-focus:     #0071e3;   /* Focus ring blue */
+  --color-primary-on-dark:   #2997ff;   /* Links on dark tiles */
+
+  /* ── Surface ────────────────────────────────────────────── */
+  --color-canvas:            #ffffff;
+  --color-canvas-parchment:  #f5f5f7;
+  --color-surface-pearl:     #fafafc;
+  --color-surface-tile-1:    #272729;
+  --color-surface-tile-2:    #2a2a2c;
+  --color-surface-tile-3:    #252527;
+  --color-surface-black:     #000000;
+  --color-surface-chip:      rgba(210, 210, 215, 0.64);
+
+  /* ── Text ───────────────────────────────────────────────── */
+  --color-ink:               #1d1d1f;
+  --color-body:              #1d1d1f;
+  --color-body-on-dark:      #ffffff;
+  --color-body-muted:        #cccccc;
+  --color-ink-muted-80:      #333333;
+  --color-ink-muted-48:      #7a7a7a;
+
+  /* ── Hairlines ──────────────────────────────────────────── */
+  --color-divider-soft:      #f0f0f0;
+  --color-hairline:          #e0e0e0;
+
+  /* ── Typography: Font Families ──────────────────────────── */
+  --font-display:  "SF Pro Display", system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  --font-body:     "SF Pro Text",    system-ui, -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+
+  /* ── Typography: Scale ──────────────────────────────────── */
+  --text-hero-display:   56px;
+  --text-display-lg:     40px;
+  --text-display-md:     34px;
+  --text-lead:           28px;
+  --text-lead-airy:      24px;
+  --text-tagline:        21px;
+  --text-body-strong:    17px;
+  --text-body:           17px;
+  --text-dense-link:     17px;
+  --text-caption:        14px;
+  --text-caption-strong: 14px;
+  --text-button-large:   18px;
+  --text-button-utility: 14px;
+  --text-fine-print:     12px;
+  --text-micro-legal:    10px;
+  --text-nav-link:       12px;
+
+  /* ── Spacing ────────────────────────────────────────────── */
+  --space-xxs:     4px;
+  --space-xs:      8px;
+  --space-sm:      12px;
+  --space-md:      17px;
+  --space-lg:      24px;
+  --space-xl:      32px;
+  --space-xxl:     48px;
+  --space-section: 80px;
+
+  /* ── Border Radius ──────────────────────────────────────── */
+  --radius-none: 0px;
+  --radius-xs:   5px;
+  --radius-sm:   8px;
+  --radius-md:   11px;
+  --radius-lg:   18px;
+  --radius-pill: 9999px;
+  --radius-full: 9999px;
+
+  /* ── Elevation ──────────────────────────────────────────── */
+  --shadow-product: rgba(0, 0, 0, 0.22) 3px 5px 30px 0;
+  --shadow-hairline: 0 0 0 1px rgba(0, 0, 0, 0.08);
+
+  /* ── Breakpoints (as custom props for JS use) ────────────── */
+  --bp-phone:          640px;
+  --bp-tablet:         834px;
+  --bp-desktop-sm:     1068px;
+  --bp-desktop:        1440px;
+}

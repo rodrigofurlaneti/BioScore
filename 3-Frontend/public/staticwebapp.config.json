@@ -1,0 +1,15 @@
+{
+  "mimeTypes": {
+    ".js":  "application/javascript",
+    ".mjs": "application/javascript",
+    ".css": "text/css",
+    ".svg": "image/svg+xml"
+  },
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": ["/assets/*", "/favicon.*", "/*.svg", "/*.ico", "/*.png"]
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-cache"
+  }
+}

@@ -1,0 +1,96 @@
+/* ── Base tile ───────────────────────────────────────────── */
+.tile {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--space-section) var(--space-lg);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ── Surface variants ────────────────────────────────────── */
+.light    { background: var(--color-canvas); }
+.parchment{ background: var(--color-canvas-parchment); }
+.dark     { background: var(--color-surface-tile-1); }
+.dark2    { background: var(--color-surface-tile-2); }
+.dark3    { background: var(--color-surface-tile-3); }
+
+/* ── Content stack ───────────────────────────────────────── */
+.inner {
+  max-width: 692px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-tagline);
+  font-weight: 600;
+  letter-spacing: 0.231px;
+  line-height: 1.19;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-lg);
+  font-weight: 600;
+  line-height: 1.10;
+  letter-spacing: 0;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-lead);
+  font-weight: 400;
+  line-height: 1.14;
+}
+
+/* text on dark tiles */
+.dark .eyebrow, .dark .title, .dark .subtitle,
+.dark2 .eyebrow, .dark2 .title, .dark2 .subtitle,
+.dark3 .eyebrow, .dark3 .title, .dark3 .subtitle {
+  color: var(--color-body-on-dark);
+}
+
+.light .eyebrow, .light .title, .light .subtitle,
+.parchment .eyebrow, .parchment .title, .parchment .subtitle {
+  color: var(--color-ink);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-xs);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image {
+  margin-top: var(--space-xl);
+  box-shadow: var(--shadow-product);
+  max-width: min(500px, 90vw);
+  border-radius: var(--radius-none);
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1068px) {
+  .title { font-size: var(--text-display-lg); }
+}
+
+@media (max-width: 640px) {
+  .tile { padding: var(--space-xxl) var(--space-lg); min-height: unset; }
+  .title { font-size: var(--text-display-md); }
+  .subtitle { font-size: 21px; }
+  .actions { flex-direction: column; gap: var(--space-sm); }
+}
+
+@media (max-width: 419px) {
+  .title { font-size: 28px; }
+  .subtitle { font-size: 19px; }
+}
