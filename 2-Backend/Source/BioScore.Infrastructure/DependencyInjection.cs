@@ -17,10 +17,13 @@ namespace BioScore.Infrastructure
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+
             services.AddScoped<IAppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
             services.AddScoped<DietQueries>();
+            services.AddScoped<ExamQueries>();
             services.AddScoped<IFoodRecognitionService, OpenAIVisionFoodAdapter>();
             services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
+
             return services;
         }
     }

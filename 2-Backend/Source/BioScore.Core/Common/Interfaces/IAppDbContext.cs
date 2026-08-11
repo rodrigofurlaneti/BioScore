@@ -7,7 +7,8 @@ namespace BioScore.Core.Common.Interfaces
 {
     public interface IAppDbContext
     {
-        DbSet<User> Users { get; } 
+        DbSet<User> Users { get; }
+        DbSet<LogTracker> LogTrackers { get; }
         DbSet<DailyLog> DailyLogs { get; }
         DbSet<DailyLogItem> DailyLogItems { get; }
         DbSet<ExamCategory> ExamCategories { get; }
